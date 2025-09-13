@@ -22,29 +22,29 @@ function App() {
   const storyElements = [
     {
       type: 'text',
-      text: 'Después de una aventura más con nuestra linda familia, y de darme un momento para recoger los lindos pasos de nuestro viaje juntos en la tierra.',
+      text: 'Después de una aventura más con nuestra familia, y de darme un momento para recoger los lindos pasos de nuestro viaje juntos en la tierra.',
     },
     {
       type: 'images',
       images: [
         {
           src: '/src/assets/images/1 (1).jpg',
-          className: 'absolute top-8 left-[10%] rotate-[-5deg]',
+          className: 'absolute top-16 left-[10%] rotate-[-5deg]',
           title: 'Aventuras',
         },
         {
           src: '/src/assets/images/1 (2).jpg',
-          className: 'absolute top-16 left-[30%] rotate-[8deg]',
+          className: 'absolute top-24 left-[30%] rotate-[8deg]',
           title: 'Familia',
         },
         {
-          src: '/src/assets/images/1 (3).jpg',
-          className: 'absolute top-4 left-[50%] rotate-[-3deg]',
+          src: '/src/assets/images/1 (9).jpg',
+          className: 'absolute top-12 left-[50%] rotate-[-3deg]',
           title: 'Juntos',
         },
         {
-          src: '/src/assets/images/1 (4).jpg',
-          className: 'absolute top-12 left-[70%] rotate-[4deg]',
+          src: '/src/assets/images/1 (20).jpg',
+          className: 'absolute top-20 left-[70%] rotate-[4deg]',
           title: 'Momentos',
         },
       ],
@@ -57,18 +57,18 @@ function App() {
       type: 'images',
       images: [
         {
-          src: '/src/assets/images/1 (5).jpg',
-          className: 'absolute top-10 left-[15%] rotate-[6deg]',
+          src: '/src/assets/images/1 (13).jpg',
+          className: 'absolute top-18 left-[15%] rotate-[6deg]',
           title: 'Reír',
         },
         {
-          src: '/src/assets/images/1 (6).jpg',
-          className: 'absolute top-6 left-[42%] rotate-[-4deg]',
+          src: '/src/assets/images/1 (14).jpg',
+          className: 'absolute top-14 left-[42%] rotate-[-4deg]',
           title: 'Emociones',
         },
         {
-          src: '/src/assets/images/1 (7).jpg',
-          className: 'absolute top-18 left-[65%] rotate-[7deg]',
+          src: '/src/assets/images/1 (16).jpg',
+          className: 'absolute top-26 left-[65%] rotate-[7deg]',
           title: 'Descubrir',
         },
       ],
@@ -81,18 +81,18 @@ function App() {
       type: 'images',
       images: [
         {
-          src: '/src/assets/images/1 (8).jpg',
-          className: 'absolute top-8 left-[20%] rotate-[-6deg]',
+          src: '/src/assets/images/1 (10).jpg',
+          className: 'absolute top-16 left-[20%] rotate-[-6deg]',
           title: 'Risas',
         },
         {
-          src: '/src/assets/images/1 (9).jpg',
-          className: 'absolute top-14 left-[45%] rotate-[5deg]',
+          src: '/src/assets/images/1 (11).jpg',
+          className: 'absolute top-22 left-[45%] rotate-[5deg]',
           title: 'Felicidad',
         },
         {
-          src: '/src/assets/images/1 (10).jpg',
-          className: 'absolute top-4 left-[68%] rotate-[-3deg]',
+          src: '/src/assets/images/1 (18).jpg',
+          className: 'absolute top-12 left-[68%] rotate-[-3deg]',
           title: 'Alegría',
         },
       ],
@@ -105,23 +105,23 @@ function App() {
       type: 'images',
       images: [
         {
-          src: '/src/assets/images/1 (11).jpg',
-          className: 'absolute top-10 left-[8%] rotate-[-5deg]',
+          src: '/src/assets/images/1 (3).jpg',
+          className: 'absolute top-18 left-[8%] rotate-[-5deg]',
           title: 'Cuidarte',
         },
         {
-          src: '/src/assets/images/1 (12).jpg',
-          className: 'absolute top-4 left-[28%] rotate-[4deg]',
+          src: '/src/assets/images/1 (4).jpg',
+          className: 'absolute top-12 left-[28%] rotate-[4deg]',
           title: 'Proteger',
         },
         {
-          src: '/src/assets/images/1 (13).jpg',
-          className: 'absolute top-16 left-[48%] rotate-[-2deg]',
+          src: '/src/assets/images/1 (5).jpg',
+          className: 'absolute top-24 left-[48%] rotate-[-2deg]',
           title: 'Amor',
         },
         {
-          src: '/src/assets/images/1 (14).jpg',
-          className: 'absolute top-6 left-[68%] rotate-[6deg]',
+          src: '/src/assets/images/1 (6).jpg',
+          className: 'absolute top-14 left-[68%] rotate-[6deg]',
           title: 'Siempre',
         },
       ],
@@ -134,18 +134,18 @@ function App() {
       type: 'images',
       images: [
         {
-          src: '/src/assets/images/1 (15).jpg',
-          className: 'absolute top-8 left-[15%] rotate-[5deg]',
+          src: '/src/assets/images/1 (7).jpg',
+          className: 'absolute top-16 left-[15%] rotate-[5deg]',
           title: 'Conversaciones',
         },
         {
-          src: '/src/assets/images/1 (16).jpg',
-          className: 'absolute top-14 left-[40%] rotate-[-7deg]',
+          src: '/src/assets/images/1 (8).jpg',
+          className: 'absolute top-22 left-[40%] rotate-[-7deg]',
           title: 'Aprender',
         },
         {
           src: '/src/assets/images/1 (17).jpg',
-          className: 'absolute top-4 left-[65%] rotate-[3deg]',
+          className: 'absolute top-12 left-[65%] rotate-[3deg]',
           title: 'Crecer',
         },
       ],
@@ -158,23 +158,18 @@ function App() {
       type: 'images',
       images: [
         {
-          src: '/src/assets/images/1 (18).jpg',
-          className: 'absolute top-12 left-[10%] rotate-[-4deg]',
+          src: '/src/assets/images/1 (12).jpg',
+          className: 'absolute top-20 left-[10%] rotate-[-4deg]',
           title: 'Señales',
         },
         {
-          src: '/src/assets/images/1 (19).jpg',
-          className: 'absolute top-6 left-[35%] rotate-[6deg]',
+          src: '/src/assets/images/1 (21).jpg',
+          className: 'absolute top-14 left-[25%] rotate-[6deg]',
           title: 'Corazón',
         },
         {
-          src: '/src/assets/images/1 (20).jpg',
-          className: 'absolute top-18 left-[55%] rotate-[-2deg]',
-          title: 'Guías',
-        },
-        {
-          src: '/src/assets/images/1 (21).jpg',
-          className: 'absolute top-10 left-[75%] rotate-[3deg]',
+          src: '/src/assets/images/1 (15).jpg',
+          className: 'absolute top-18 left-[55%] rotate-[3deg]',
           title: 'Destino',
         },
       ],
@@ -208,13 +203,6 @@ function App() {
     <div className="app">
       {/* Hero Section with Aurora Background */}
       <AuroraBackground className="hero-section">
-        <div className="hero-background">
-          <div className="gradient-orb gradient-orb-1" />
-          <div className="gradient-orb gradient-orb-2" />
-          <div className="gradient-orb gradient-orb-3" />
-          <div className="mesh-gradient" />
-        </div>
-
         <div className="hero-content">
           <motion.div
             initial={{ scale: 0, rotate: -45 }}
@@ -236,8 +224,8 @@ function App() {
             transition={{ delay: 0.6, duration: 1.2, ease: 'easeOut' }}
             className="hero-title"
           >
-            <span className="gradient-text">Felices</span>
-            <span className="title-word">28</span>
+            <span className="gradient-text">HBD</span>{' '}
+            <span className="title-word">love of my life</span>
           </motion.h1>
 
           <motion.p
@@ -262,7 +250,8 @@ function App() {
                 alt="Special moment"
                 className="hero-polaroid-image"
                 onError={(e) => {
-                  e.target.src = 'https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=300&h=400&fit=crop&crop=faces';
+                  e.target.src =
+                    'https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=300&h=400&fit=crop&crop=faces';
                 }}
               />
             </div>
@@ -357,12 +346,32 @@ function App() {
                 }}
                 className="celebration"
               >
-                <h2 className="celebration-text gradient-text">Felices 28 ♡</h2>
-                <p className="final-message">
-                  Hoy mi corazón está de fiesta porque te tengo a ti, porque
-                  tengo a mi otra mitad.
-                </p>
-              </motion.div>
+                <h2 className="celebration-text gradient-text">
+                  HBD love of my life ♡
+                </h2>
+                  <p className="final-message">
+                    Hoy mi corazón está de fiesta porque te tengo a ti.
+                  </p>
+
+                  {/* Standalone Final Image */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8, rotate: 0 }}
+                    animate={{ opacity: 1, scale: 1, rotate: 6 }}
+                    transition={{ delay: 2.0, duration: 1, ease: 'easeOut' }}
+                    className="final-card-image"
+                  >
+                    <div className="final-polaroid-card">
+                      <img
+                        src="/src/assets/images/1 (19).jpg"
+                        alt="Final moment"
+                        className="final-polaroid-image"
+                        onError={(e) => {
+                          e.target.src = 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=300&h=400&fit=crop&crop=faces';
+                        }}
+                      />
+                    </div>
+                  </motion.div>
+                </motion.div>
             </motion.div>
           </div>
         </section>
