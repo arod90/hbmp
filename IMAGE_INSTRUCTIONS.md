@@ -17,7 +17,7 @@ I've set up the site to use **20 images** distributed across **6 image sliders**
 
 1. **Rename your 20 images** to: `image1.jpg`, `image2.jpg`, `image3.jpg`, ... `image20.jpg`
 
-2. **Copy them to**: `src/assets/images/` folder
+2. **Copy them to**: `public/images/` folder
 
 3. **Image Requirements**:
    - Format: JPG, PNG, or WebP
