@@ -26,27 +26,27 @@ function App() {
     },
     {
       type: 'images',
-      backgroundMessage: 'Nuestra aventura familiar',
+      backgroundMessage: 'gracias por llegar a mi vida',
       images: [
         {
           src: '/images/1 (1).jpg',
           className: 'absolute top-16 left-[14%] rotate-[-5deg]',
-          title: 'Aventuras',
+          title: 'el chancho',
         },
         {
           src: '/images/1 (2).jpg',
           className: 'absolute top-24 left-[24%] rotate-[8deg]',
-          title: 'Familia',
+          title: 'la rata',
         },
         {
           src: '/images/1 (9).jpg',
           className: 'absolute top-12 left-[34%] rotate-[-3deg]',
-          title: 'Juntos',
+          title: 'nuestra familia',
         },
         {
           src: '/images/1 (20).jpg',
           className: 'absolute top-20 left-[44%] rotate-[4deg]',
-          title: 'Momentos',
+          title: 'llevarles a la playa <3',
         },
       ],
     },
@@ -56,22 +56,27 @@ function App() {
     },
     {
       type: 'images',
-      backgroundMessage: 'Emociones que nos unen',
+      backgroundMessage: 'por crecer de la mano conmigo',
       images: [
         {
           src: '/images/1 (13).jpg',
-          className: 'absolute top-18 left-[19%] rotate-[6deg]',
-          title: 'Reír',
+          className: 'absolute top-18 left-[9%] rotate-[6deg]',
+          title: 'buceando contigo <3',
         },
         {
           src: '/images/1 (14).jpg',
-          className: 'absolute top-14 left-[31%] rotate-[-4deg]',
-          title: 'Emociones',
+          className: 'absolute top-14 left-[21%] rotate-[-4deg]',
+          title: 'la mujer mas hermosa',
         },
         {
           src: '/images/1 (16).jpg',
-          className: 'absolute top-26 left-[43%] rotate-[7deg]',
-          title: 'Descubrir',
+          className: 'absolute top-26 left-[33%] rotate-[7deg]',
+          title: 'una aventura extrema',
+        },
+        {
+          src: '/images/1 (23).jpg',
+          className: 'absolute top-10 left-[43%] rotate-[-2deg]',
+          title: 'cuando recien llego',
         },
       ],
     },
@@ -81,22 +86,27 @@ function App() {
     },
     {
       type: 'images',
-      backgroundMessage: 'Risas y felicidad',
+      backgroundMessage: 'por reir juntos y nunca dejar de explorar juntos',
       images: [
         {
           src: '/images/1 (10).jpg',
-          className: 'absolute top-16 left-[21%] rotate-[-6deg]',
-          title: 'Risas',
+          className: 'absolute top-16 left-[11%] rotate-[-6deg]',
+          title: 'key west',
         },
         {
           src: '/images/1 (11).jpg',
-          className: 'absolute top-22 left-[33%] rotate-[5deg]',
-          title: 'Felicidad',
+          className: 'absolute top-22 left-[23%] rotate-[5deg]',
+          title: 'es un mono <3',
         },
         {
           src: '/images/1 (18).jpg',
-          className: 'absolute top-12 left-[45%] rotate-[-3deg]',
-          title: 'Alegría',
+          className: 'absolute top-12 left-[35%] rotate-[-3deg]',
+          title: 'como pinguino',
+        },
+        {
+          src: '/images/1 (24).jpg',
+          className: 'absolute top-6 left-[45%] rotate-[8deg]',
+          title: '24 horas de viaje',
         },
       ],
     },
@@ -106,27 +116,27 @@ function App() {
     },
     {
       type: 'images',
-      backgroundMessage: 'Cuidarte siempre',
+      backgroundMessage: 'prometo cuidarte y amarte siempre',
       images: [
         {
           src: '/images/1 (3).jpg',
           className: 'absolute top-18 left-[14%] rotate-[-5deg]',
-          title: 'Cuidarte',
+          title: 'pasochoa norte',
         },
         {
           src: '/images/1 (4).jpg',
           className: 'absolute top-12 left-[25%] rotate-[4deg]',
-          title: 'Proteger',
+          title: 'ser cursi contigo',
         },
         {
           src: '/images/1 (5).jpg',
           className: 'absolute top-24 left-[36%] rotate-[-2deg]',
-          title: 'Amor',
+          title: 'nuestra cumbre',
         },
         {
           src: '/images/1 (6).jpg',
           className: 'absolute top-14 left-[47%] rotate-[6deg]',
-          title: 'Siempre',
+          title: 'donde don jimmy',
         },
       ],
     },
@@ -136,22 +146,27 @@ function App() {
     },
     {
       type: 'images',
-      backgroundMessage: 'Aprender y crecer juntos',
+      backgroundMessage: 'y siempre ser roca y tu mayor soporte',
       images: [
         {
           src: '/images/1 (7).jpg',
-          className: 'absolute top-16 left-[17%] rotate-[5deg]',
-          title: 'Conversaciones',
+          className: 'absolute top-16 left-[7%] rotate-[5deg]',
+          title: 'una palomita <3',
         },
         {
           src: '/images/1 (8).jpg',
-          className: 'absolute top-22 left-[31%] rotate-[-7deg]',
-          title: 'Aprender',
+          className: 'absolute top-22 left-[21%] rotate-[-7deg]',
+          title: 'mi foto favorita de ti',
         },
         {
           src: '/images/1 (17).jpg',
-          className: 'absolute top-12 left-[45%] rotate-[3deg]',
-          title: 'Crecer',
+          className: 'absolute top-12 left-[35%] rotate-[3deg]',
+          title: 'un date especial',
+        },
+        {
+          src: '/images/1 (26).jpg',
+          className: 'absolute top-6 left-[45%] rotate-[-6deg]',
+          title: 'la foto del coquito',
         },
       ],
     },
@@ -161,22 +176,77 @@ function App() {
     },
     {
       type: 'images',
-      backgroundMessage: 'Señales del destino',
+      backgroundMessage: 'por muchos años más y por nuestros sueños!',
       images: [
         {
           src: '/images/1 (12).jpg',
-          className: 'absolute top-20 left-[19%] rotate-[-4deg]',
-          title: 'Señales',
+          className: 'absolute top-20 left-[9%] rotate-[-4deg]',
+          title: 'señales',
         },
         {
           src: '/images/1 (21).jpg',
-          className: 'absolute top-14 left-[31%] rotate-[6deg]',
-          title: 'Corazón',
+          className: 'absolute top-14 left-[21%] rotate-[6deg]',
+          title: 'buscando cuarzos',
         },
         {
           src: '/images/1 (15).jpg',
-          className: 'absolute top-18 left-[43%] rotate-[3deg]',
-          title: 'Destino',
+          className: 'absolute top-18 left-[33%] rotate-[3deg]',
+          title: 'papallacta!',
+        },
+        {
+          src: '/images/1 (27).jpg',
+          className: 'absolute top-8 left-[43%] rotate-[7deg]',
+          title: 'encontrarnos en paris',
+        },
+      ],
+    },
+    {
+      type: 'text',
+      text: 'Gracias por llegar a mi vida, por crecer de la mano conmigo, por reír juntos y nunca dejar de explorar juntos.',
+    },
+    {
+      type: 'images',
+      backgroundMessage: 'gracias por llegar a mi vida',
+      images: [
+        {
+          src: '/images/1 (28).jpg',
+          className: 'absolute top-16 left-[10%] rotate-[-3deg]',
+          title: 'nuestra segunda aventura',
+        },
+        {
+          src: '/images/1 (29).jpg',
+          className: 'absolute top-12 left-[25%] rotate-[5deg]',
+          title: 'portugal!',
+        },
+        {
+          src: '/images/1 (30).jpg',
+          className: 'absolute top-20 left-[40%] rotate-[-7deg]',
+          title: 'en tu ciudad favorita!',
+        },
+      ],
+    },
+    {
+      type: 'text',
+      text: 'Prometo cuidarte y amarte siempre, y siempre ser roca y tu mayor soporte por muchos años más y por nuestros sueños!',
+    },
+    {
+      type: 'images',
+      backgroundMessage: 'por muchos años más y por nuestros sueños!',
+      images: [
+        {
+          src: '/images/1 (31).jpg',
+          className: 'absolute top-14 left-[10%] rotate-[4deg]',
+          title: 'con mi pelo "largo"',
+        },
+        {
+          src: '/images/1 (22).jpg',
+          className: 'absolute top-8 left-[25%] rotate-[6deg]',
+          title: 'cuando vimos un alien!',
+        },
+        {
+          src: '/images/1 (25).jpg',
+          className: 'absolute top-18 left-[40%] rotate-[-4deg]',
+          title: 'me haces mas feliz que nunca',
         },
       ],
     },
