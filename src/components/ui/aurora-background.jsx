@@ -15,25 +15,27 @@ export const AuroraBackground = ({
       {...props}
     >
       <div className="absolute inset-0 overflow-hidden w-full h-full">
+        {/* Simplified single aurora layer for better performance */}
         <div
-          className="absolute inset-0 opacity-90 will-change-transform animate-aurora blur-[60px] w-full h-full"
+          className="absolute inset-0 opacity-60 w-full h-full"
           style={{
             background:
-              'linear-gradient(45deg, #ff0080, #ff8c00, #40e0d0, #ff1493, #00ff7f, #ff6347)',
-            backgroundSize: '600% 600%',
-            animation: 'aurora 15s ease infinite',
+              'linear-gradient(45deg, #ff0080, #ff8c00, #40e0d0, #ff1493, #00ff7f)',
+            backgroundSize: '300% 300%',
+            animation: 'aurora 25s ease infinite',
+            transform: 'translateZ(0)', // Force GPU acceleration
+            willChange: 'background-position', // Optimize for animation
+            filter: 'blur(30px)', // Reduced blur for better performance
+            backfaceVisibility: 'hidden', // Safari optimization
           }}
         />
+        {/* Simplified overlay */}
         <div
-          className="absolute inset-0 animate-aurora blur-[80px] w-full h-full"
+          className="absolute inset-0 bg-gradient-to-br from-black/15 via-transparent to-black/15 w-full h-full"
           style={{
-            background:
-              'radial-gradient(circle at 30% 70%, #ff69b4 0%, transparent 50%), radial-gradient(circle at 70% 30%, #00ffff 0%, transparent 50%), radial-gradient(circle at 50% 50%, #ffd700 0%, transparent 50%)',
-            backgroundSize: '400% 400%',
-            animation: 'aurora 25s ease infinite reverse',
+            transform: 'translateZ(0)',
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-transparent to-black/30 w-full h-full" />
       </div>
       <div className="relative z-10 w-full h-full flex flex-col items-center justify-center">
         {children}

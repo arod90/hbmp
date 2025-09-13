@@ -16,7 +16,7 @@ export default {
         'spin-slow': 'spin 8s linear infinite',
         'bounce-slow': 'bounce 3s infinite',
         gradient: 'gradient 8s ease infinite',
-        aurora: 'aurora 20s ease infinite',
+        aurora: 'aurora 30s ease infinite',
       },
       keyframes: {
         fadeIn: {

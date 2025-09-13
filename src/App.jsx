@@ -26,25 +26,26 @@ function App() {
     },
     {
       type: 'images',
+      backgroundMessage: 'Nuestra aventura familiar',
       images: [
         {
           src: '/images/1 (1).jpg',
-          className: 'absolute top-16 left-[10%] rotate-[-5deg]',
+          className: 'absolute top-16 left-[14%] rotate-[-5deg]',
           title: 'Aventuras',
         },
         {
           src: '/images/1 (2).jpg',
-          className: 'absolute top-24 left-[30%] rotate-[8deg]',
+          className: 'absolute top-24 left-[24%] rotate-[8deg]',
           title: 'Familia',
         },
         {
           src: '/images/1 (9).jpg',
-          className: 'absolute top-12 left-[50%] rotate-[-3deg]',
+          className: 'absolute top-12 left-[34%] rotate-[-3deg]',
           title: 'Juntos',
         },
         {
           src: '/images/1 (20).jpg',
-          className: 'absolute top-20 left-[70%] rotate-[4deg]',
+          className: 'absolute top-20 left-[44%] rotate-[4deg]',
           title: 'Momentos',
         },
       ],
@@ -55,20 +56,21 @@ function App() {
     },
     {
       type: 'images',
+      backgroundMessage: 'Emociones que nos unen',
       images: [
         {
           src: '/images/1 (13).jpg',
-          className: 'absolute top-18 left-[15%] rotate-[6deg]',
+          className: 'absolute top-18 left-[19%] rotate-[6deg]',
           title: 'Reír',
         },
         {
           src: '/images/1 (14).jpg',
-          className: 'absolute top-14 left-[42%] rotate-[-4deg]',
+          className: 'absolute top-14 left-[31%] rotate-[-4deg]',
           title: 'Emociones',
         },
         {
           src: '/images/1 (16).jpg',
-          className: 'absolute top-26 left-[65%] rotate-[7deg]',
+          className: 'absolute top-26 left-[43%] rotate-[7deg]',
           title: 'Descubrir',
         },
       ],
@@ -79,20 +81,21 @@ function App() {
     },
     {
       type: 'images',
+      backgroundMessage: 'Risas y felicidad',
       images: [
         {
           src: '/images/1 (10).jpg',
-          className: 'absolute top-16 left-[20%] rotate-[-6deg]',
+          className: 'absolute top-16 left-[21%] rotate-[-6deg]',
           title: 'Risas',
         },
         {
           src: '/images/1 (11).jpg',
-          className: 'absolute top-22 left-[45%] rotate-[5deg]',
+          className: 'absolute top-22 left-[33%] rotate-[5deg]',
           title: 'Felicidad',
         },
         {
           src: '/images/1 (18).jpg',
-          className: 'absolute top-12 left-[68%] rotate-[-3deg]',
+          className: 'absolute top-12 left-[45%] rotate-[-3deg]',
           title: 'Alegría',
         },
       ],
@@ -103,25 +106,26 @@ function App() {
     },
     {
       type: 'images',
+      backgroundMessage: 'Cuidarte siempre',
       images: [
         {
           src: '/images/1 (3).jpg',
-          className: 'absolute top-18 left-[8%] rotate-[-5deg]',
+          className: 'absolute top-18 left-[14%] rotate-[-5deg]',
           title: 'Cuidarte',
         },
         {
           src: '/images/1 (4).jpg',
-          className: 'absolute top-12 left-[28%] rotate-[4deg]',
+          className: 'absolute top-12 left-[25%] rotate-[4deg]',
           title: 'Proteger',
         },
         {
           src: '/images/1 (5).jpg',
-          className: 'absolute top-24 left-[48%] rotate-[-2deg]',
+          className: 'absolute top-24 left-[36%] rotate-[-2deg]',
           title: 'Amor',
         },
         {
           src: '/images/1 (6).jpg',
-          className: 'absolute top-14 left-[68%] rotate-[6deg]',
+          className: 'absolute top-14 left-[47%] rotate-[6deg]',
           title: 'Siempre',
         },
       ],
@@ -132,20 +136,21 @@ function App() {
     },
     {
       type: 'images',
+      backgroundMessage: 'Aprender y crecer juntos',
       images: [
         {
           src: '/images/1 (7).jpg',
-          className: 'absolute top-16 left-[15%] rotate-[5deg]',
+          className: 'absolute top-16 left-[17%] rotate-[5deg]',
           title: 'Conversaciones',
         },
         {
           src: '/images/1 (8).jpg',
-          className: 'absolute top-22 left-[40%] rotate-[-7deg]',
+          className: 'absolute top-22 left-[31%] rotate-[-7deg]',
           title: 'Aprender',
         },
         {
           src: '/images/1 (17).jpg',
-          className: 'absolute top-12 left-[65%] rotate-[3deg]',
+          className: 'absolute top-12 left-[45%] rotate-[3deg]',
           title: 'Crecer',
         },
       ],
@@ -156,20 +161,21 @@ function App() {
     },
     {
       type: 'images',
+      backgroundMessage: 'Señales del destino',
       images: [
         {
           src: '/images/1 (12).jpg',
-          className: 'absolute top-20 left-[10%] rotate-[-4deg]',
+          className: 'absolute top-20 left-[19%] rotate-[-4deg]',
           title: 'Señales',
         },
         {
           src: '/images/1 (21).jpg',
-          className: 'absolute top-14 left-[25%] rotate-[6deg]',
+          className: 'absolute top-14 left-[31%] rotate-[6deg]',
           title: 'Corazón',
         },
         {
           src: '/images/1 (15).jpg',
-          className: 'absolute top-18 left-[55%] rotate-[3deg]',
+          className: 'absolute top-18 left-[43%] rotate-[3deg]',
           title: 'Destino',
         },
       ],
@@ -208,9 +214,9 @@ function App() {
             initial={{ scale: 0, rotate: -45 }}
             animate={{ scale: 1, rotate: 0 }}
             transition={{
-              type: 'spring',
-              stiffness: 200,
-              damping: 15,
+              type: 'tween',
+              ease: 'easeOut',
+              duration: 0.6,
               delay: 0.2,
             }}
             className="hero-icon"
@@ -221,7 +227,12 @@ function App() {
           <motion.h1
             initial={{ opacity: 0, y: 80 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 1.2, ease: 'easeOut' }}
+            transition={{
+              delay: 0.6,
+              duration: 0.8,
+              ease: 'easeOut',
+              type: 'tween',
+            }}
             className="hero-title"
           >
             <span className="gradient-text">HBD</span>{' '}
@@ -231,7 +242,12 @@ function App() {
           <motion.p
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 1, ease: 'easeOut' }}
+            transition={{
+              delay: 1.2,
+              duration: 0.6,
+              ease: 'easeOut',
+              type: 'tween',
+            }}
             className="hero-subtitle"
           >
             Celebro tu vida, que se ha vuelto irreparablemente atada a la mía.
@@ -245,10 +261,11 @@ function App() {
             className="hero-card"
           >
             <div className="hero-polaroid-card">
-            <img
-              src="/images/1 (8).jpg"
-              alt="Special moment"
-              className="hero-polaroid-image"
+              <img
+                src="/images/1 (8).jpg"
+                alt="Special moment"
+                className="hero-polaroid-image"
+                loading="eager"
                 onError={(e) => {
                   e.target.src =
                     'https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=300&h=400&fit=crop&crop=faces';
@@ -292,6 +309,15 @@ function App() {
                     className="images-container"
                   >
                     <DraggableCardContainer className="card-container">
+                      {/* Background message */}
+                      <div className="absolute inset-0 flex items-center justify-center z-0">
+                        <p className="text-center text-2xl md:text-4xl font-bold text-neutral-400 dark:text-neutral-600 max-w-sm mx-auto px-4 select-none">
+                          {element.backgroundMessage ||
+                            'Swipe the cards to explore our memories'}
+                        </p>
+                      </div>
+
+                      {/* Draggable cards */}
                       {element.images.map((image, imgIndex) => (
                         <DraggableCardBody
                           key={imgIndex}
@@ -302,6 +328,7 @@ function App() {
                               src={image.src}
                               alt={image.title}
                               className="polaroid-image"
+                              loading="lazy"
                               onError={(e) => {
                                 // Fallback to placeholder if image doesn't exist yet
                                 e.target.src = `https://images.unsplash.com/photo-${
@@ -355,9 +382,9 @@ function App() {
 
                 {/* Standalone Final Image */}
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.8, rotate: 0 }}
+                  initial={{ opacity: 0, scale: 0.95, rotate: 4 }}
                   animate={{ opacity: 1, scale: 1, rotate: 6 }}
-                  transition={{ delay: 2.0, duration: 1, ease: 'easeOut' }}
+                  transition={{ delay: 1.8, duration: 0.6, ease: 'easeOut' }}
                   className="final-card-image"
                 >
                   <div className="final-polaroid-card">
