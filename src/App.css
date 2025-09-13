@@ -9,9 +9,37 @@
 
 /* Safari Performance Optimizations */
 * {
-  -webkit-transform: translateZ(0);
+  -webkit-transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
-  -webkit-perspective: 1000;
+  -webkit-perspective: 1000px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Force hardware acceleration for animated elements */
+.hero-section,
+.card-container,
+.polaroid-card,
+.hero-polaroid-card,
+.final-polaroid-card {
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/* Optimize scrolling performance */
+html {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Optimize image rendering */
+img {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 /* Reduce motion for users who prefer it */

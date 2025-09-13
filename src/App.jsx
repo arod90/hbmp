@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo, useCallback, memo } from 'react';
 import { Heart } from 'lucide-react';
 import {
   DraggableCardContainer,
@@ -18,239 +18,255 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Story structure with text blocks followed by image sliders
-  const storyElements = [
-    {
-      type: 'text',
-      text: 'Después de una aventura más con nuestra familia, y de darme un momento para recoger los lindos pasos de nuestro viaje juntos en la tierra.',
-    },
-    {
-      type: 'images',
-      backgroundMessage: 'gracias por llegar a mi vida',
-      images: [
-        {
-          src: '/images/1 (1).jpg',
-          className: 'absolute top-16 left-[14%] rotate-[-5deg]',
-          title: 'el chancho',
-        },
-        {
-          src: '/images/1 (2).jpg',
-          className: 'absolute top-24 left-[24%] rotate-[8deg]',
-          title: 'la rata',
-        },
-        {
-          src: '/images/1 (9).jpg',
-          className: 'absolute top-12 left-[34%] rotate-[-3deg]',
-          title: 'nuestra familia',
-        },
-        {
-          src: '/images/1 (20).jpg',
-          className: 'absolute top-20 left-[44%] rotate-[4deg]',
-          title: 'llevarles a la playa <3',
-        },
-      ],
-    },
-    {
-      type: 'text',
-      text: 'En estos días tuve la oportunidad de verte reír, de verte llorar, de descubrir el mundo contigo. Una montaña rusa de emociones fuertes que me unen a ti de la manera más íntima y profunda.',
-    },
-    {
-      type: 'images',
-      backgroundMessage: 'por crecer de la mano conmigo',
-      images: [
-        {
-          src: '/images/1 (13).jpg',
-          className: 'absolute top-18 left-[9%] rotate-[6deg]',
-          title: 'buceando contigo <3',
-        },
-        {
-          src: '/images/1 (14).jpg',
-          className: 'absolute top-14 left-[21%] rotate-[-4deg]',
-          title: 'la mujer mas hermosa',
-        },
-        {
-          src: '/images/1 (16).jpg',
-          className: 'absolute top-26 left-[33%] rotate-[7deg]',
-          title: 'una aventura extrema',
-        },
-        {
-          src: '/images/1 (23).jpg',
-          className: 'absolute top-10 left-[43%] rotate-[-2deg]',
-          title: 'cuando recien llego',
-        },
-      ],
-    },
-    {
-      type: 'text',
-      text: 'Me acuerdo de nuestros chistes y de tu risa, de como me molestas y me alivianas los días, y quiero llorar de la felicidad.',
-    },
-    {
-      type: 'images',
-      backgroundMessage: 'por reir juntos y nunca dejar de explorar juntos',
-      images: [
-        {
-          src: '/images/1 (10).jpg',
-          className: 'absolute top-16 left-[11%] rotate-[-6deg]',
-          title: 'key west',
-        },
-        {
-          src: '/images/1 (11).jpg',
-          className: 'absolute top-22 left-[23%] rotate-[5deg]',
-          title: 'es un mono <3',
-        },
-        {
-          src: '/images/1 (18).jpg',
-          className: 'absolute top-12 left-[35%] rotate-[-3deg]',
-          title: 'como pinguino',
-        },
-        {
-          src: '/images/1 (24).jpg',
-          className: 'absolute top-6 left-[45%] rotate-[8deg]',
-          title: '24 horas de viaje',
-        },
-      ],
-    },
-    {
-      type: 'text',
-      text: 'Me acuerdo de tus lágrimas y del susto de verte enfermita y siento el deber de cuidarte en cuerpo y alma toda la vida.',
-    },
-    {
-      type: 'images',
-      backgroundMessage: 'prometo cuidarte y amarte siempre',
-      images: [
-        {
-          src: '/images/1 (3).jpg',
-          className: 'absolute top-18 left-[14%] rotate-[-5deg]',
-          title: 'pasochoa norte',
-        },
-        {
-          src: '/images/1 (4).jpg',
-          className: 'absolute top-12 left-[25%] rotate-[4deg]',
-          title: 'ser cursi contigo',
-        },
-        {
-          src: '/images/1 (5).jpg',
-          className: 'absolute top-24 left-[36%] rotate-[-2deg]',
-          title: 'nuestra cumbre',
-        },
-        {
-          src: '/images/1 (6).jpg',
-          className: 'absolute top-14 left-[47%] rotate-[6deg]',
-          title: 'donde don jimmy',
-        },
-      ],
-    },
-    {
-      type: 'text',
-      text: 'Pienso en nuestras conversaciones largas y encuentros inesperados, y en cuanto aprendo de ti, cuanto le ayuda a crecer a mi alma tu forma de pensar y tu forma de actuar.',
-    },
-    {
-      type: 'images',
-      backgroundMessage: 'y siempre ser roca y tu mayor soporte',
-      images: [
-        {
-          src: '/images/1 (7).jpg',
-          className: 'absolute top-16 left-[7%] rotate-[5deg]',
-          title: 'una palomita <3',
-        },
-        {
-          src: '/images/1 (8).jpg',
-          className: 'absolute top-22 left-[21%] rotate-[-7deg]',
-          title: 'mi foto favorita de ti',
-        },
-        {
-          src: '/images/1 (17).jpg',
-          className: 'absolute top-12 left-[35%] rotate-[3deg]',
-          title: 'un date especial',
-        },
-        {
-          src: '/images/1 (26).jpg',
-          className: 'absolute top-6 left-[45%] rotate-[-6deg]',
-          title: 'la foto del coquito',
-        },
-      ],
-    },
-    {
-      type: 'text',
-      text: 'Pienso en las señales que nos mandan nuestros guías y se me conmueve el corazón.',
-    },
-    {
-      type: 'images',
-      backgroundMessage: 'por muchos años más y por nuestros sueños!',
-      images: [
-        {
-          src: '/images/1 (12).jpg',
-          className: 'absolute top-20 left-[9%] rotate-[-4deg]',
-          title: 'señales',
-        },
-        {
-          src: '/images/1 (21).jpg',
-          className: 'absolute top-14 left-[21%] rotate-[6deg]',
-          title: 'buscando cuarzos',
-        },
-        {
-          src: '/images/1 (15).jpg',
-          className: 'absolute top-18 left-[33%] rotate-[3deg]',
-          title: 'papallacta!',
-        },
-        {
-          src: '/images/1 (27).jpg',
-          className: 'absolute top-8 left-[43%] rotate-[7deg]',
-          title: 'encontrarnos en paris',
-        },
-      ],
-    },
-    {
-      type: 'text',
-      text: 'Gracias por llegar a mi vida, por crecer de la mano conmigo, por reír juntos y nunca dejar de explorar juntos.',
-    },
-    {
-      type: 'images',
-      backgroundMessage: 'gracias por llegar a mi vida',
-      images: [
-        {
-          src: '/images/1 (28).jpg',
-          className: 'absolute top-16 left-[10%] rotate-[-3deg]',
-          title: 'nuestra segunda aventura',
-        },
-        {
-          src: '/images/1 (29).jpg',
-          className: 'absolute top-12 left-[25%] rotate-[5deg]',
-          title: 'portugal!',
-        },
-        {
-          src: '/images/1 (30).jpg',
-          className: 'absolute top-20 left-[40%] rotate-[-7deg]',
-          title: 'en tu ciudad favorita!',
-        },
-      ],
-    },
-    {
-      type: 'text',
-      text: 'Prometo cuidarte y amarte siempre, y siempre ser roca y tu mayor soporte por muchos años más y por nuestros sueños!',
-    },
-    {
-      type: 'images',
-      backgroundMessage: 'por muchos años más y por nuestros sueños!',
-      images: [
-        {
-          src: '/images/1 (31).jpg',
-          className: 'absolute top-14 left-[10%] rotate-[4deg]',
-          title: 'con mi pelo "largo"',
-        },
-        {
-          src: '/images/1 (22).jpg',
-          className: 'absolute top-8 left-[25%] rotate-[6deg]',
-          title: 'cuando vimos un alien!',
-        },
-        {
-          src: '/images/1 (25).jpg',
-          className: 'absolute top-18 left-[40%] rotate-[-4deg]',
-          title: 'me haces mas feliz que nunca',
-        },
-      ],
-    },
-  ];
+  // Optimize scroll performance with passive listeners
+  useEffect(() => {
+    const handleScroll = () => {
+      // Throttle scroll events for better performance
+      requestAnimationFrame(() => {
+        // Any scroll-based logic would go here
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Memoize story elements to prevent unnecessary re-renders
+  const storyElements = useMemo(
+    () => [
+      {
+        type: 'text',
+        text: 'Después de una aventura más con nuestra familia, y de darme un momento para recoger los lindos pasos de nuestro viaje juntos en la tierra.',
+      },
+      {
+        type: 'images',
+        backgroundMessage: 'gracias por llegar a mi vida',
+        images: [
+          {
+            src: '/images/1 (1).jpg',
+            className: 'absolute top-16 left-[14%] rotate-[-5deg]',
+            title: 'el chancho',
+          },
+          {
+            src: '/images/1 (2).jpg',
+            className: 'absolute top-24 left-[24%] rotate-[8deg]',
+            title: 'la rata',
+          },
+          {
+            src: '/images/1 (9).jpg',
+            className: 'absolute top-12 left-[34%] rotate-[-3deg]',
+            title: 'nuestra familia',
+          },
+          {
+            src: '/images/1 (20).jpg',
+            className: 'absolute top-20 left-[44%] rotate-[4deg]',
+            title: 'llevarles a la playa <3',
+          },
+        ],
+      },
+      {
+        type: 'text',
+        text: 'En estos días tuve la oportunidad de verte reír, de verte llorar, de descubrir el mundo contigo. Una montaña rusa de emociones fuertes que me unen a ti de la manera más íntima y profunda.',
+      },
+      {
+        type: 'images',
+        backgroundMessage: 'por crecer de la mano conmigo',
+        images: [
+          {
+            src: '/images/1 (13).jpg',
+            className: 'absolute top-18 left-[9%] rotate-[6deg]',
+            title: 'buceando contigo <3',
+          },
+          {
+            src: '/images/1 (14).jpg',
+            className: 'absolute top-14 left-[21%] rotate-[-4deg]',
+            title: 'la mujer mas hermosa',
+          },
+          {
+            src: '/images/1 (16).jpg',
+            className: 'absolute top-26 left-[33%] rotate-[7deg]',
+            title: 'una aventura extrema',
+          },
+          {
+            src: '/images/1 (23).jpg',
+            className: 'absolute top-10 left-[43%] rotate-[-2deg]',
+            title: 'cuando recien llego',
+          },
+        ],
+      },
+      {
+        type: 'text',
+        text: 'Me acuerdo de nuestros chistes y de tu risa, de como me molestas y me alivianas los días, y quiero llorar de la felicidad.',
+      },
+      {
+        type: 'images',
+        backgroundMessage: 'por reir juntos y nunca dejar de explorar juntos',
+        images: [
+          {
+            src: '/images/1 (10).jpg',
+            className: 'absolute top-16 left-[11%] rotate-[-6deg]',
+            title: 'key west',
+          },
+          {
+            src: '/images/1 (11).jpg',
+            className: 'absolute top-22 left-[23%] rotate-[5deg]',
+            title: 'es un mono <3',
+          },
+          {
+            src: '/images/1 (18).jpg',
+            className: 'absolute top-12 left-[35%] rotate-[-3deg]',
+            title: 'como pinguino',
+          },
+          {
+            src: '/images/1 (24).jpg',
+            className: 'absolute top-6 left-[45%] rotate-[8deg]',
+            title: '24 horas de viaje',
+          },
+        ],
+      },
+      {
+        type: 'text',
+        text: 'Me acuerdo de tus lágrimas y del susto de verte enfermita y siento el deber de cuidarte en cuerpo y alma toda la vida.',
+      },
+      {
+        type: 'images',
+        backgroundMessage: 'prometo cuidarte y amarte siempre',
+        images: [
+          {
+            src: '/images/1 (3).jpg',
+            className: 'absolute top-18 left-[14%] rotate-[-5deg]',
+            title: 'pasochoa norte',
+          },
+          {
+            src: '/images/1 (4).jpg',
+            className: 'absolute top-12 left-[25%] rotate-[4deg]',
+            title: 'ser cursi contigo',
+          },
+          {
+            src: '/images/1 (5).jpg',
+            className: 'absolute top-24 left-[36%] rotate-[-2deg]',
+            title: 'nuestra cumbre',
+          },
+          {
+            src: '/images/1 (6).jpg',
+            className: 'absolute top-14 left-[47%] rotate-[6deg]',
+            title: 'donde don jimmy',
+          },
+        ],
+      },
+      {
+        type: 'text',
+        text: 'Pienso en nuestras conversaciones largas y encuentros inesperados, y en cuanto aprendo de ti, cuanto le ayuda a crecer a mi alma tu forma de pensar y tu forma de actuar.',
+      },
+      {
+        type: 'images',
+        backgroundMessage: 'y siempre ser roca y tu mayor soporte',
+        images: [
+          {
+            src: '/images/1 (7).jpg',
+            className: 'absolute top-16 left-[7%] rotate-[5deg]',
+            title: 'una palomita <3',
+          },
+          {
+            src: '/images/1 (8).jpg',
+            className: 'absolute top-22 left-[21%] rotate-[-7deg]',
+            title: 'mi foto favorita de ti',
+          },
+          {
+            src: '/images/1 (17).jpg',
+            className: 'absolute top-12 left-[35%] rotate-[3deg]',
+            title: 'un date especial',
+          },
+          {
+            src: '/images/1 (26).jpg',
+            className: 'absolute top-6 left-[45%] rotate-[-6deg]',
+            title: 'la foto del coquito',
+          },
+        ],
+      },
+      {
+        type: 'text',
+        text: 'Pienso en las señales que nos mandan nuestros guías y se me conmueve el corazón.',
+      },
+      {
+        type: 'images',
+        backgroundMessage: 'por muchos años más y por nuestros sueños!',
+        images: [
+          {
+            src: '/images/1 (12).jpg',
+            className: 'absolute top-20 left-[9%] rotate-[-4deg]',
+            title: 'señales',
+          },
+          {
+            src: '/images/1 (21).jpg',
+            className: 'absolute top-14 left-[21%] rotate-[6deg]',
+            title: 'buscando cuarzos',
+          },
+          {
+            src: '/images/1 (15).jpg',
+            className: 'absolute top-18 left-[33%] rotate-[3deg]',
+            title: 'papallacta!',
+          },
+          {
+            src: '/images/1 (27).jpg',
+            className: 'absolute top-8 left-[43%] rotate-[7deg]',
+            title: 'encontrarnos en paris',
+          },
+        ],
+      },
+      {
+        type: 'text',
+        text: 'Gracias por llegar a mi vida, por crecer de la mano conmigo, por reír juntos y nunca dejar de explorar juntos.',
+      },
+      {
+        type: 'images',
+        backgroundMessage: 'gracias por llegar a mi vida',
+        images: [
+          {
+            src: '/images/1 (28).jpg',
+            className: 'absolute top-16 left-[10%] rotate-[-3deg]',
+            title: 'nuestra segunda aventura',
+          },
+          {
+            src: '/images/1 (29).jpg',
+            className: 'absolute top-12 left-[25%] rotate-[5deg]',
+            title: 'portugal!',
+          },
+          {
+            src: '/images/1 (30).jpg',
+            className: 'absolute top-20 left-[40%] rotate-[-7deg]',
+            title: 'en tu ciudad favorita!',
+          },
+        ],
+      },
+      {
+        type: 'text',
+        text: 'Prometo cuidarte y amarte siempre, y siempre ser roca y tu mayor soporte por muchos años más y por nuestros sueños!',
+      },
+      {
+        type: 'images',
+        backgroundMessage: 'por muchos años más y por nuestros sueños!',
+        images: [
+          {
+            src: '/images/1 (31).jpg',
+            className: 'absolute top-14 left-[10%] rotate-[4deg]',
+            title: 'con mi pelo "largo"',
+          },
+          {
+            src: '/images/1 (22).jpg',
+            className: 'absolute top-8 left-[25%] rotate-[6deg]',
+            title: 'cuando vimos un alien!',
+          },
+          {
+            src: '/images/1 (25).jpg',
+            className: 'absolute top-18 left-[40%] rotate-[-4deg]',
+            title: 'me haces mas feliz que nunca',
+          },
+        ],
+      },
+    ],
+    []
+  ); // Empty dependency array since story elements are static
 
   if (isLoading) {
     return (
@@ -433,13 +449,14 @@ function App() {
               className="final-content"
             >
               <motion.div
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{
-                  delay: 0.5,
-                  type: 'spring',
-                  stiffness: 200,
+                  delay: 0.8,
+                  duration: 1.5,
+                  ease: [0.25, 0.1, 0.25, 1],
+                  type: 'tween',
                 }}
                 className="celebration"
               >
@@ -452,9 +469,14 @@ function App() {
 
                 {/* Standalone Final Image */}
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.95, rotate: 4 }}
+                  initial={{ opacity: 0, scale: 0.99, rotate: 5.5 }}
                   animate={{ opacity: 1, scale: 1, rotate: 6 }}
-                  transition={{ delay: 1.8, duration: 0.6, ease: 'easeOut' }}
+                  transition={{
+                    delay: 3.0,
+                    duration: 2.0,
+                    ease: [0.2, 0.0, 0.2, 1],
+                    type: 'tween',
+                  }}
                   className="final-card-image"
                 >
                   <div className="final-polaroid-card">

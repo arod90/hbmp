@@ -1,6 +1,7 @@
+import { memo } from 'react';
 import { cn } from '../../lib/utils';
 
-export const AuroraBackground = ({
+export const AuroraBackground = memo(({
   className,
   children,
   showRadialGradient = true,
@@ -42,4 +43,4 @@ export const AuroraBackground = ({
       </div>
     </div>
   );
-};
+});

@@ -8,10 +8,10 @@ import {
   useAnimationControls,
   animate,
 } from 'framer-motion';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, memo, useCallback } from 'react';
 import { cn } from '../../lib/utils';
 
-export const DraggableCardContainer = ({ children, className }) => {
+export const DraggableCardContainer = memo(({ children, className }) => {
   return (
     <div
       className={cn(
@@ -23,7 +23,7 @@ export const DraggableCardContainer = ({ children, className }) => {
       {children}
     </div>
   );
-};
+});
 
 export const DraggableCardBody = ({
   children,
@@ -91,11 +91,12 @@ export const DraggableCardBody = ({
     };
 
     updateConstraints();
-    window.addEventListener('resize', updateConstraints);
+    // Use passive event listener for better performance
+    window.addEventListener('resize', updateConstraints, { passive: true });
     return () => window.removeEventListener('resize', updateConstraints);
   }, []);
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = useCallback((e) => {
     if (!cardRef.current) return;
 
     const { clientX, clientY } = e;
@@ -108,12 +109,12 @@ export const DraggableCardBody = ({
 
     mouseX.set(deltaX);
     mouseY.set(deltaY);
-  };
+  }, [mouseX, mouseY]);
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = useCallback(() => {
     mouseX.set(0);
     mouseY.set(0);
-  };
+  }, [mouseX, mouseY]);
 
   const handleDragStart = () => {
     document.body.style.cursor = 'grabbing';
@@ -192,8 +193,10 @@ export const DraggableCardBody = ({
             rotateY,
             opacity,
             willChange: 'transform',
-            transform: 'translateZ(0)',
+            transform: 'translate3d(0, 0, 0)',
             backfaceVisibility: 'hidden',
+            WebkitBackfaceVisibility: 'hidden',
+            WebkitTransformStyle: 'preserve-3d',
           }}
           animate={controls}
           whileHover={{ scale: 1.02 }}
